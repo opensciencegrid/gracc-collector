@@ -1,5 +1,5 @@
 Name:           gracc-collector
-Version:        1.1.4
+Version:        1.1.5
 Release:        1%{?dist}
 Summary:        Gratia-compatible collector for grid accounting records
 License:        MIT
@@ -67,6 +67,9 @@ getent passwd gracc >/dev/null || \
 exit 0
 
 %changelog
+* Wed Apr 05 2017 Kevin Retzke <kretzke@fnal.gov> - 1.1.5-1
+- Package v1.1.5. Reset blocked flag if RabbitMQ connection is closed.
+
 * Thu Mar 30 2017 Kevin Retzke <kretzke@fnal.gov> - 1.1.4-1
 - Package v1.1.4. Fix catching AMQP unblock signal.
 

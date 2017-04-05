@@ -148,6 +148,7 @@ func (a *AMQPOutput) setup() error {
 		}
 	}()
 	// listen for blocking events
+	a.isBlocked = false
 	blockings := a.connection.NotifyBlocked(make(chan amqp.Blocking))
 	go func() {
 		for b := range blockings {
