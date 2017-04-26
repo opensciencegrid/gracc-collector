@@ -163,9 +163,9 @@ func (g *GraccCollector) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var remoteAddr string
 
 	// Check for forwarded headers
-	if remote, ok := r.Header["X-Real-IP"]; ok {
+	if remote := r.Header.Get("X-Real-IP"); remote != "" {
 		remoteAddr = remote
-	} else if remote, ok := r.Header["X-Forwarded-For"]; ok {
+	} else if remote := r.Header.Get("X-Forwarded-For"); remote != "" {
 		remoteAddr = remote
 	} else {
 		remoteAddr = r.RemoteAddr
