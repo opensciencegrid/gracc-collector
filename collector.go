@@ -160,7 +160,7 @@ type Request struct {
 
 func (g *GraccCollector) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	g.Events <- GOT_REQUEST
-	var remoateAddr string
+	var remoteAddr string
 
 	// Check for forwarded headers
 	if remote, ok := r.Header["X-Real-IP"]; ok {
