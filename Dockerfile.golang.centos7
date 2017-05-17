@@ -2,7 +2,7 @@ FROM centos:7
 
 # setup dev environment
 RUN yum -y groupinstall 'Development Tools'
-RUN yum -y install rpmdevtools && rpmdev-setuptree
+RUN yum -y install rpmdevtools golang && rpmdev-setuptree
 
 # Install Go
 RUN curl -O -s https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
