@@ -33,6 +33,7 @@ test:
 
 rpm:
 	git archive --prefix gracc-collector/ --output $(HOME)/rpmbuild/SOURCES/gracc-collector.tar.gz HEAD
+	yum -y install golang
 	rpmbuild -ba gracc-collector.spec
 
 docker:
