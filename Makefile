@@ -33,7 +33,7 @@ test:
 
 rpm:
 	git archive --prefix gracc-collector/ --output $(HOME)/rpmbuild/SOURCES/gracc-collector.tar.gz HEAD
-	rpmbuild -ba gracc-collector.spec
+	rpmbuild -ba gracc-collector.spec --define "_test 1"
 
 docker:
 	docker build -t opensciencegrid/gracc-collector .
