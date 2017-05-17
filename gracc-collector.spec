@@ -5,7 +5,7 @@ Summary:        Gratia-compatible collector for grid accounting records
 License:        MIT
 
 URL:            https://gracc.opensciencegrid.org
-%ifdef %{_test}
+%if %{?_gracc_ci_test}0
 Source:         %{name}.tar.gz
 %else
 Source:         %{name}-%{version}.tar.gz
