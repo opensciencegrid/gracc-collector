@@ -7,6 +7,7 @@ License:        MIT
 URL:            https://gracc.opensciencegrid.org
 Source:         %{name}.tar.gz
 
+BuildRequires:  golang
 BuildRequires:  systemd-units
 Requires(pre): shadow-utils
 
