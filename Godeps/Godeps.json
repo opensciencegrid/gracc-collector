@@ -1,6 +1,6 @@
 {
 	"ImportPath": "github.com/opensciencegrid/gracc-collector",
-	"GoVersion": "go1.7",
+	"GoVersion": "go1.8",
 	"Deps": [
 		{
 			"ImportPath": "github.com/BurntSushi/toml",
@@ -57,7 +57,7 @@
 		},
 		{
 			"ImportPath": "github.com/streadway/amqp",
-			"Rev": "b4f3ceab0337f013208d31348b578d83c0064744"
+			"Rev": "cefed15a0bd808d13947f228770a81b06ebe8e45"
 		}
 	]
 }

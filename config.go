@@ -43,6 +43,7 @@ func DefaultConfig() *CollectorConfig {
 			RoutingKey:   "",
 			Retry:        "1s",
 			MaxRetry:     "1h",
+			SkipVerify:   false,
 		},
 		StartBufferSize: 4096,
 		MaxBufferSize:   512 * 1024,

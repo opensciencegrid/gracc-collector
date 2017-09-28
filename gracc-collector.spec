@@ -1,5 +1,5 @@
 Name:           gracc-collector
-Version:        1.1.6
+Version:        1.1.7
 Release:        1%{?dist}
 Summary:        Gratia-compatible collector for grid accounting records
 License:        MIT
@@ -67,6 +67,9 @@ getent passwd gracc >/dev/null || \
 exit 0
 
 %changelog
+* Tue Sep 26 2017 Kevin Retzke <kretzke@fnal.gov> - 1.1.7-1
+- Allow skipping verification of RabbitMQ TLS certs.
+
 * Wed May 17 2017 Brian Bockelman <bbockelm@cse.unl.edu> - 1.1.6-1
 - Add support for running behind nginx.
 

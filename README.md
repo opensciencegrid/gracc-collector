@@ -35,6 +35,7 @@ below in parentheses. Environment variables override file settings.
     password = "guest"    # (GRACC_AMQP_PASSWORD)
     format = "raw"        # format to send record in [raw|xml|json] (GRACC_AMQP_FORMAT)
     retry = "10s"         # AMQP connection retry interval (GRACC_AMQP_RETRY)
+    skipVerify = false    # skip TLS cert verification (GRACC_AMQP_SKIPVERIFY)
 
 # Usage
 
@@ -76,6 +77,10 @@ To create a release, one must do the following:
     build.
 
 # Release Notes
+
+### v1.1.7
+
+* Allow skipping verification of RabbitMQ TLS certs.
 
 ### v1.1.6
 

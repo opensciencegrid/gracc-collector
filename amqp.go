@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"encoding/xml"
 	"fmt"
 	"math/rand"
@@ -30,6 +31,7 @@ type AMQPConfig struct {
 	RetryDuration    time.Duration `env:"-"`
 	MaxRetry         string        `env:"MAXRETRY"`
 	MaxRetryDuration time.Duration `env:"-"`
+	SkipVerify       bool          `env:"SKIPVERIFY"`
 }
 
 func (c *AMQPConfig) Validate() error {
@@ -119,7 +121,7 @@ func (a *AMQPOutput) setup() error {
 	}).Info("AMQP: connecting to RabbitMQ")
 	var err error
 	connect := func() error {
-		a.connection, err = amqp.Dial(a.URI)
+		a.connection, err = amqp.DialTLS(a.URI, &tls.Config{InsecureSkipVerify: a.Config.SkipVerify})
 		return err
 	}
 	sleep := a.Config.RetryDuration
