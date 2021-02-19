@@ -131,6 +131,7 @@ type JobUsageRecord struct {
 	CpuDuration        []cpuDuration  `xml:",omitempty"`
 	StartTime          time.Time      `xml:",omitempty"`
 	EndTime            time.Time      `xml:",omitempty"`
+	QueueTime          time.Time      `xml:",omitempty"`
 	TimeDuration       []timeDuration `xml:",omitempty"`
 	TimeInstant        []timeInstant  `xml:",omitempty"`
 	Resource           []resource     `xml:",omitempty"`
@@ -192,6 +193,9 @@ func (jur *JobUsageRecord) ToJSON(indent string) ([]byte, error) {
 	}
 	if !jur.EndTime.IsZero() {
 		r["EndTime"] = jur.EndTime.Format(time.RFC3339)
+	}
+	if !jur.QueueTime.IsZero() {
+		r["QueueTime"] = jur.QueueTime.Format(time.RFC3339)
 	}
 
 	// Standard durations
