@@ -27,6 +27,7 @@
     "Processors_description": "m3.medium",
     "Processors_metric": "total",
     "ProjectName": "aws-no project name given",
+    "QueueTime":"2015-11-03T19:34:31Z",
     "RecordId": "mac-126903.dhcp.fnal.gov:13842.1",
     "ReportableVOName": "nova",
     "ResourceType": "AWSVM",

@@ -5,9 +5,9 @@ RUN yum -y groupinstall 'Development Tools'
 RUN yum -y install rpmdevtools && rpmdev-setuptree
 
 # Install Go
-RUN curl -O -s https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
-RUN echo '53ab94104ee3923e228a2cb2116e5e462ad3ebaeea06ff04463479d7f12d27ca  go1.8.linux-amd64.tar.gz' > go1.8.linux-amd64.tar.gz.sha256
-RUN sha256sum --check go1.8.linux-amd64.tar.gz.sha256
-RUN tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
+RUN curl -O -s https://storage.googleapis.com/golang/go1.14.15.linux-amd64.tar.gz
+RUN echo 'c64a57b374a81f7cf1408d2c410a28c6f142414f1ffa9d1062de1d653b0ae0d6  go1.14.15.linux-amd64.tar.gz' > go1.14.15.linux-amd64.tar.gz.sha256
+RUN sha256sum --check go1.14.15.linux-amd64.tar.gz.sha256
+RUN tar -C /usr/local -xzf go1.14.15.linux-amd64.tar.gz
 ENV PATH /usr/local/go/bin:$PATH
 ENV GOPATH /gopath

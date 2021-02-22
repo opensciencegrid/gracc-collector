@@ -23,6 +23,7 @@
 <Processors urwg:description="m3.medium" urwg:metric="total" >1</Processors>
 <StartTime >2015-11-03T19:34:32Z</StartTime>
 <EndTime >2015-11-03T20:34:32Z</EndTime>
+<QueueTime urwg:description="Was entered in seconds">2015-11-03T19:34:31Z</QueueTime>
 <MachineName urwg:description="ami-a3263c93" >no Public ip as instance has been stopped</MachineName>
 <SiteName >fermilab</SiteName>
 <SubmitHost >no Private ip as instance has been terminated</SubmitHost>

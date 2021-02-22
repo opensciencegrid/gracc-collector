@@ -1,8 +1,8 @@
 FROM local/golang:centos7
 
 # Build & Test
-RUN mkdir -p /gopath/src/github.com/opensciencegrid/gracc-collector
-ADD . /gopath/src/github.com/opensciencegrid/gracc-collector
+RUN mkdir -p /gracc-collector
+ADD . /gracc-collector
 
-WORKDIR /gopath/src/github.com/opensciencegrid/gracc-collector
-CMD make test && make rpm
+WORKDIR /gracc-collector
+CMD go get && make test && make rpm
