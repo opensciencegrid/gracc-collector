@@ -26,12 +26,6 @@ usage records, and sends those to RabbitMQ or another AMQP 0.9.1 broker.
 %autosetup -n %{name}
 
 %build
-# setup local GOPATH vith source and vendored dependencies
-mkdir src
-ln -rs vendor/* src/
-mkdir -p src/github.com/opensciencegrid
-ln -rs ./ src/github.com/opensciencegrid/gracc-collector
-export GOPATH=$(pwd)
 make %{?_smp_mflags}
 
 

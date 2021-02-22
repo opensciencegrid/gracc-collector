@@ -14,4 +14,5 @@ require (
 	github.com/prometheus/procfs v0.0.0-20160411190841-abf152e5f3e9
 	github.com/retzkek/iso8601duration v0.0.0-20160527204447-d27cc0ce07ec
 	github.com/streadway/amqp v0.0.0-20151001150549-b4f3ceab0337
+	golang.org/x/sys v0.0.0-20210220050731-9a76102bfb43 // indirect
 )
