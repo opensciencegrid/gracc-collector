@@ -1,14 +1,19 @@
-FROM opensciencegrid/osg-wn:3.4-el7
+FROM golang:1.14
 
 LABEL name="OSG GRACC Collector"
 LABEL build-date=20171102-1623
 
-# install gracc from RPM
-RUN yum -y --enablerepo=osg-development install gracc-collector && \
-    yum clean all
+WORKDIR /go/src/app
+COPY . .
+
+RUN go get -d -v ./
+RUN go install -v ./
 
 ENV GRACC_ADDRESS 0.0.0.0
 ENV GRACC_PORT 8080
 
 EXPOSE 8080
-CMD ["/usr/bin/gracc-collector"]
+
+
+CMD ["gracc-collector"]
+
