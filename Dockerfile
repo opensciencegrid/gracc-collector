@@ -1,4 +1,4 @@
-FROM golang:1.14
+FROM golang:1.16
 
 LABEL name="OSG GRACC Collector"
 LABEL build-date=20171102-1623
