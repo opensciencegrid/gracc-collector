@@ -1,12 +1,13 @@
 Name:           gracc-collector
-Version:        1.1.7
+Version:        1.1.8
 Release:        1%{?dist}
 Summary:        Gratia-compatible collector for grid accounting records
 License:        MIT
 
 URL:            https://gracc.opensciencegrid.org
-Source:         %{name}.tar.gz
+Source:         %{name}-%{version}.tar.gz
 
+BuildRequires:  golang
 BuildRequires:  systemd-units
 Requires(pre): shadow-utils
 
@@ -23,14 +24,13 @@ usage records, and sends those to RabbitMQ or another AMQP 0.9.1 broker.
 %define debug_package ${nil}
 
 %prep
-%autosetup -n %{name}
+%setup
 
 %build
 make %{?_smp_mflags}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}%{_bindir}/
 cp -p gracc-collector %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_unitdir}/
@@ -61,6 +61,9 @@ getent passwd gracc >/dev/null || \
 exit 0
 
 %changelog
+* Tue Aug 15 2018 Marian Zvada  <marian.zvada@cern.ch> - 1.1.8-1
+- Base off of osg-3.4; SOFTWARE-2995
+
 * Thu Nov 02 2017 Derek Weitzel <dweitzel@cse.unl.edu> - 1.1.7-1
 - Add persistence to the gracc-collector
 
